@@ -1,0 +1,42 @@
+<html>
+<head>
+<title>Varianz</title>
+<style>
+@font-face {
+	src: url('VARIANZ.woff2') format('woff2-variations');
+	font-family:'VARIANZ';
+	font-style: normal;
+} div {
+  font-family: 'VARIANZ', serif;
+  font-size: 5vw;
+  transition: font-variation-settings 1s linear;
+}
+</style>
+</head>
+<body>
+<center>
+<div height="40%"></div>
+<div contenteditable="true" style="font-variation-settings: 'EXPR' 50,'SERI' 50;" id="display">
+<br><br>Sphinx of black quartz, judge my vow!
+</div>
+<br><br><br><br><br>
+<select id="list">
+<option value="'EXPR' 100,'SERI' 0">Lebendigkeit</option>
+<option value="'EXPR' 100,'SERI' 50">Lebendig-Elegant</option>
+<option value="'EXPR' 100,'SERI' 100">Eleganz</option>
+<option value="'EXPR' 50,'SERI' 0">Sachlich-Lebendig</option>
+<option value="'EXPR' 50,'SERI' 50" selected="selected">Varianz</option>
+<option value="'EXPR' 50,'SERI' 100">Robust-Elegant</option>
+<option value="'EXPR' 0,'SERI' 0">Sachlichkeit</option>
+<option value="'EXPR' 0,'SERI' 50">Sachlich-Robust</option>
+<option value="'EXPR' 0,'SERI' 100">Robustheit</option>
+</select>
+</center>
+</body>
+<script>
+function listQ(){
+    document.getElementById('display').setAttribute("style", `font-variation-settings: ${this.value};`);
+}
+document.getElementById("list").onchange = listQ;
+</script>
+</html>
