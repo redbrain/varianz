@@ -1,2 +1,2 @@
-# [Varianz](https://redbrain.github.io/varianz/)
-Me playing with variable fonts
+# [varianz](https://redbrain.github.io/varianz/)
+me playing with variable fonts
