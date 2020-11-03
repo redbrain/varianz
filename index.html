@@ -1,42 +1,41 @@
-<html>
-<head>
-<title>varianz</title>
-<style>
+
+<html><head><title>varianz</title><style>
 @font-face {
-	src: url('VARIANZ.woff2') format('woff2-variations');
+	src: url('https://redbrain.github.io/varianz/VARIANZ.woff2') format('woff2-variations');
 	font-family:'VARIANZ';
 	font-style: normal;
 } div {
   font-family: 'VARIANZ', serif;
   font-size: 5vw;
-  transition: font-variation-settings 0.7s;
+  transition: font-variation-settings 1.2s;
+} td {
+  text-align: center;
+  width: 15vw;
+  height: 14vw;
+  cursor: pointer;
 }
-</style>
-</head>
-<body>
-<center>
-<div height="40%"></div>
+</style></head><body><center><div height="40%"></div>
 <div contenteditable="true" style="font-variation-settings: 'EXPR' 50,'SERI' 50;" id="display">
 <br><br>sphinx of black quartz, judge my vow!
-</div>
-<br><br><br><br><br>
-<select id="list">
-<option value="'EXPR' 100,'SERI' 0">lebendigkeit</option>
-<option value="'EXPR' 100,'SERI' 50">lebendig-elegant</option>
-<option value="'EXPR' 100,'SERI' 100">eleganz</option>
-<option value="'EXPR' 50,'SERI' 0">sachlich-lebendig</option>
-<option value="'EXPR' 50,'SERI' 50" selected="selected">varianz</option>
-<option value="'EXPR' 50,'SERI' 100">robust-elegant</option>
-<option value="'EXPR' 0,'SERI' 0">sachlichkeit</option>
-<option value="'EXPR' 0,'SERI' 50">sachlich-robust</option>
-<option value="'EXPR' 0,'SERI' 100">robustheit</option>
-</select>
-</center>
-</body>
-<script>
-function listQ(){
-    document.getElementById('display').setAttribute("style", `font-variation-settings: ${this.value};`);
+</div><br><br><br><br><br>
+<table border>
+<tr>
+  <td onclick="sel('\'EXPR\' 100,\'SERI\' 0')">lebendigkeit</td>
+  <td onclick="sel('\'EXPR\' 100,\'SERI\' 50')">lebendig-elegant</td>
+  <td onclick="sel('\'EXPR\' 100,\'SERI\' 100')">eleganz</td>
+</tr>
+<tr>
+  <td onclick="sel('\'EXPR\' 50,\'SERI\' 0')">sachlich-lebendig</td>
+  <td onclick="sel('\'EXPR\' 50,\'SERI\' 50')">varianz</td>
+  <td onclick="sel('\'EXPR\' 50,\'SERI\' 100')">robust-elegant</td>
+</tr>
+<tr>
+  <td onclick="sel('\'EXPR\' 0,\'SERI\' 0')">sachlichkeit</td>
+  <td onclick="sel('\'EXPR\' 0,\'SERI\' 50')">sachlich-robust</td>
+  <td onclick="sel('\'EXPR\' 0,\'SERI\' 100')">robustheit</td>
+</tr>
+</table></center></body><script>
+function sel(a){
+    document.getElementById('display').setAttribute("style", `font-variation-settings: ${a};`);
 }
-document.getElementById("list").onchange = listQ;
-</script>
-</html>
+</script></html>
